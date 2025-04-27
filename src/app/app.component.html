@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="item" *ngFor="let disk of getInitedDisks()">
+        <div (click)="expandDisk(disk)">
+            💽 {{ disk.Name }}
+        </div>
+        <div class="cataloges" *ngIf="disk.isExpanded">
+            <app-cataloge-tree *ngFor="let cataloge of disk.Cataloge" [cataloge]="cataloge" [path]="disk.Name">
+            </app-cataloge-tree>
+        </div>
+    </div>
+</div>

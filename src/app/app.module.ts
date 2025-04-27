@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FileService } from './file.service';
+import { CatalogeTreeComponent } from './component/cataloge-tree/cataloge-tree.component';
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        CatalogeTreeComponent
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule
+        HttpClientModule
     ],
-    providers: [],
+    providers: [FileService],
     bootstrap: [AppComponent]
 })
+
 export class AppModule { }

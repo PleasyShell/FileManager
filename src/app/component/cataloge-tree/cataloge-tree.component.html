@@ -1,0 +1,10 @@
+<div class="cataloge-item">
+    <div (click)="expand()">
+        {{ cataloge.isExpanded ? '📂' : '📁' }} {{ cataloge.Name }}
+    </div>
+    <div class="children" *ngIf="cataloge.isExpanded">
+        <app-cataloge-tree *ngFor="let child of cataloge.Cataloge" [cataloge]="child"
+            [path]="path + '/' + cataloge.Name">
+        </app-cataloge-tree>
+    </div>
+</div>
