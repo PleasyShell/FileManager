@@ -39,6 +39,15 @@ export class FileService {
         });
     };
 
+    public expandDisk(disk: TDisk): void {
+
+        disk.isExpanded = !disk.isExpanded;
+
+        if (disk.isExpanded && (!disk.Cataloge || disk.Cataloge.length === 0)) {
+            this.loadCataloge(disk as TCataloge, disk.Name);
+        };
+    };
+
     public getDisks(): TDisk[] {
 
         return this.disksData;

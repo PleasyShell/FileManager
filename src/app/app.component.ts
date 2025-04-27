@@ -25,10 +25,6 @@ export class AppComponent {
 
     protected expandDisk(disk: TDisk): void {
 
-        disk.isExpanded = !disk.isExpanded;
-
-        if (disk.isExpanded && (!disk.Cataloge || disk.Cataloge.length === 0)) {
-            this.fileService.loadCataloge(disk as TCataloge, disk.Name);
-        };
+        this.fileService.expandDisk(disk);
     };
 };
